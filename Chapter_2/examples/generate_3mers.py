@@ -10,4 +10,3 @@ def generate_trimers():
         print 'Some', answer
 
 generate_trimers()
-
