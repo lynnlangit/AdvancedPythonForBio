@@ -16,13 +16,14 @@ def get_ancestors_rec(taxon):
 		parent = tax_dict.get(taxon)
 		parent_ancestors = get_ancestors_rec(parent) 
 		return [parent] + parent_ancestors
-
+        
 def get_lca(taxon1, taxon2): 
     taxon1_ancestors = [taxon1] + get_ancestors_rec(taxon1) 
     for taxon in [taxon2] + get_ancestors_rec(taxon2): 
         if taxon in taxon1_ancestors: 
             return taxon 
 
+# shape the solution -- easier to read, but harder to code?
 def get_lca_list_rec(taxa): 
     print("getting lca for " + str(taxa)) 
     if len(taxa) == 2: 

@@ -23,6 +23,7 @@ def get_lca(taxon1, taxon2):
         if taxon in taxon1_ancestors: 
             return taxon 
 
+# find the solution -- list must be managed carefully
 def get_lca_list(taxa): 
     taxon1 = taxa.pop() 
     while len(taxa) > 0: 
