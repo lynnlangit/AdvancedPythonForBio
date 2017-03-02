@@ -25,6 +25,9 @@ def are_closely_related(my_list, taxon1, taxon2, taxon3):
                 result = True 
     return result
 
-assert are_closely_related(tree, 'raccoon', 'dog', 'bear') == False 
-assert are_closely_related(tree, 'raccoon', 'bear', 'weasel') == True 
-assert are_closely_related(tree, 'raccoon', 'bear', 'dog') == True
+# false case first
+print are_closely_related(tree, 'man', 'woman', 'child') == True 
+# true case(s)
+print are_closely_related(tree, 'raccoon', 'dog', 'bear') == False 
+print are_closely_related(tree, 'raccoon', 'bear', 'weasel') == True 
+print are_closely_related(tree, 'raccoon', 'bear', 'dog') == True

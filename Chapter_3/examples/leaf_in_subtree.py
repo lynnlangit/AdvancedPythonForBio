@@ -9,7 +9,10 @@ def contains(my_list, target):
                 result = True 
     return result 
 
+# should return false
+print contains([0], 2)
 
-assert contains([1,2,3], 2)
-assert contains([1,[2,3],[4,5]], 5)
-assert contains([['sea_lion','seal'],['monkey','cat'], 'weasel'], 'cat')
+# make it pass 
+print contains([1,2,3], 2)
+print contains([1,[2,3],[4,5]], 5)
+print contains([['sea_lion','seal'],['monkey','cat'], 'weasel'], 'cat')

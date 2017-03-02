@@ -15,4 +15,7 @@ for condition1, set1 in gene_sets.items():
          similarity = len(set1.intersection(set2)) / len(set1.union(set2))
          similarity_scores[condition1][condition2] = similarity 
 
+print(similarity_scores)
+print("Similarity is " + str(similarity))
+
 
