@@ -1,11 +1,6 @@
 from __future__ import division
 import random
 
-#
-# class definitions
-#
-
-# a class that represents an individual
 class Individual(object):
 
     # the constructor takes a list of alleles
@@ -26,7 +21,6 @@ class Individual(object):
             result = result + a.name
         return result
 
-# a class to represent a single allele
 class Allele(object):
  
     # an allele has a name and a genotype
@@ -34,7 +28,6 @@ class Allele(object):
         self.name = name
         self.fitness = fitness
 
-# a class to represent a locus
 class Locus(object):
 
     # a locus has a name
@@ -50,11 +43,6 @@ class Locus(object):
     # method to return an allele picked at random
     def get_random_allele(self):
         return random.choice(self.alleles)
-
-
-#
-# functions for carrying out the simulation
-#
 
 # function to create an individual given a list of loci
 def create_individual(loci):
@@ -89,10 +77,6 @@ def get_allele_frequency(population, allele):
         if allele in individual.alleles: 
             allele_count += 1 
     return allele_count / len(population)
-
-#
-# code to run the simulation
-#
 
 locus1 = Locus('locus one') 
 locus1.add_allele(Allele('A', 1)) 
