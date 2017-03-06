@@ -15,6 +15,5 @@ except ValueError as ex:
 except ZeroDivisionError as ex: 
     print("Number of pieces can't be zero") 
 else: 
-    # print out each piece of DNA in turn 
     for start in range(0, len(dna)-piece_length+1, piece_length): 
         print(dna[start:start+piece_length]) 
