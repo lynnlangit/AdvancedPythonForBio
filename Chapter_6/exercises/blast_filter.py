@@ -1,11 +1,9 @@
 from __future__ import division
 
-
 # function to return the percent identity of a hit
 def get_percent_id(hit_string):
     return float(hit_string.split("\t")[2])
 
-# function to test whether the subject name of a hit contains COX1
 def cox1_filter(hit_string):
     subject = hit_string.split("\t")[1]
     if "COX1" in subject:
@@ -23,7 +21,6 @@ def start_ratio(hit_string):
 # hit_lines = filter(comment_filter, open('blast_result.txt'))
 hit_lines = [line for line in open('blast_result.txt') if not line.startswith('#')]
 
-# how many hits have fewer than 20 mismatches?
 few_mismatch_hits = [
 	line 
 	for line 
