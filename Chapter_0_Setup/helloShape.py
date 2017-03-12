@@ -1,3 +1,6 @@
+# This file is a simple 'Hello Python' type sample for you to use to check your IDE setup
+# I am using VSCode with Python language plug-ins
+
 def square(x):
     y = x * x
     return y

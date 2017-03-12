@@ -10,4 +10,6 @@ def generate_kmers(length):
         answer = i + " "
         print 'Some', answer
 
-generate_kmers(4)
+generate_kmers(1)
+generate_kmers(2)
+generate_kmers(3)
