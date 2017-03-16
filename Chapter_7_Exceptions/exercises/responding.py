@@ -1,4 +1,6 @@
 try: 
+    # NOTE: run this code in the terminal
+
     # ask the user for the filename, open it and read the DNA sequence 
     input_file = raw_input('enter filename:\n') 
     f = open(input_file) 
