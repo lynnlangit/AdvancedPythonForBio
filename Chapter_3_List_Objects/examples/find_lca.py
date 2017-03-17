@@ -9,7 +9,6 @@ def contains(my_list, target):
                 result = True 
     return result 
 
-
 def find_subtrees(my_list, taxon1, taxon2): 
     result = [] 
     if contains(my_list, taxon1) and contains(my_list, taxon2): 

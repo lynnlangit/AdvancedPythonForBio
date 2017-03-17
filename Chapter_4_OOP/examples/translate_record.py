@@ -1,6 +1,5 @@
 from __future__ import division
 
-
 class DNARecord(object): 
     def __init__(self, sequence, gene_name, species_name):
          self.sequence = sequence
@@ -20,7 +19,6 @@ class DNARecord(object):
         t_count = self.sequence.count('T') 
         at_content = (a_count + t_count) / length 
         return at_content 
-
 
 def translate_dna(dna_record): 
     gencode = { 

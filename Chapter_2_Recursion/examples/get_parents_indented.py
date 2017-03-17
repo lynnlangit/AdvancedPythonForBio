@@ -9,7 +9,6 @@ tax_dict = {
 'Galago moholi' : 'Lorisiformes'
 } 
 
-
 def get_ancestors(taxon, depth):
 	spacer = '  ' * depth
 	print(spacer + 'calculating ancestors for ' + taxon)

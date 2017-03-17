@@ -9,7 +9,6 @@ tax_dict = {
 'Galago moholi' : 'Lorisiformes'
 } 
 
-
 def get_ancestors(taxon):
 	print('calculating ancestors for ' + taxon)
 	if taxon == 'Primates':

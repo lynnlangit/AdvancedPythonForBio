@@ -14,8 +14,7 @@ def contains(my_list, target):
 def are_closely_related(my_list, taxon1, taxon2, taxon3): 
     result = False 
     # does the current list match the condition?
-    if (contains(my_list, taxon1) 
-    and contains(my_list, taxon2) 
+    if (contains(my_list, taxon1) and contains(my_list, taxon2) 
     and not contains(my_list, taxon3)): 
         result = True 
     # do any sublists match the condition?

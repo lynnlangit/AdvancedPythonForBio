@@ -20,8 +20,6 @@ class SequenceRecord(object):
         if not re.match(r"[A-Z][a-z]+ [a-z]+", species_name):
             raise ValueError('species name incorrectly formatted')
 
-        # call the sequence validation method which is defined in the
-        # subclasses
         self.validate_sequence(sequence)
         self.sequence = sequence
         self.gene_name = gene_name

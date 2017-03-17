@@ -18,7 +18,6 @@ def get_children(taxon):
         current_taxon_children = new_tax_dict.get(current_taxon, []) 
         stack.extend(current_taxon_children) 
         result.append(current_taxon) 
- 
     return result 
 
 print(get_children('Strepsirrhini'))

@@ -1,5 +1,4 @@
-import os 
-import sys 
+import os, sys 
 
 # Run in terminal
 # check for valid filename - alleles.csv
@@ -15,7 +14,7 @@ if not pieces.isdigit():
     sys.exit('not a valid number') 
 
 pieces = int(pieces) 
-if pieces < 0: 
+if pieces <= 0: 
     sys.exit('number of pieces must be greater than zero') 
 
 piece_length = len(dna) / pieces 

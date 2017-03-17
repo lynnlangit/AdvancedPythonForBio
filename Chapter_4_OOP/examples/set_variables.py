@@ -1,11 +1,9 @@
 from __future__ import division
 
-
 class DNARecord(object): 
     sequence = 'ACGTAGCTGACGATC'
     gene_name = 'ABC1'
     species_name = 'Drosophila melanogaster'
-
  
     def complement(self): 
         replacement1 = self.sequence.replace('A', 't') 
@@ -25,7 +23,6 @@ class DNARecord(object):
         self.sequence = new_seq 
         self.gene_name = new_gene_name 
         self.species_name = new_species_name 
- 
 
 d1 = DNARecord() 
 d1.set_variables('ATATATTATTATATTATA','COX1','Homo sapiens') 
