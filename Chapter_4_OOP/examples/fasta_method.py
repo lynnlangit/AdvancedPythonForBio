@@ -1,6 +1,5 @@
 from __future__ import division
 
-
 class DNARecord(object): 
     def __init__(self, sequence, gene_name, species_name):
          self.sequence = sequence
@@ -25,8 +24,6 @@ class DNARecord(object):
         safe_species_name = self.species_name.replace(' ','_')
         header = '>' + self.gene_name + '_' + safe_species_name
         return header + '\n' + self.sequence + '\n' 
-
-
  
 d1 = DNARecord('ATATATTATTATATTATA', 'COX1', 'Homo sapiens')
 print(d1.get_fasta())

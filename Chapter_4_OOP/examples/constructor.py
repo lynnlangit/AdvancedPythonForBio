@@ -1,6 +1,5 @@
 from __future__ import division
 
-
 class DNARecord(object): 
     def __init__(self, sequence, gene_name, species_name):
          self.sequence = sequence
