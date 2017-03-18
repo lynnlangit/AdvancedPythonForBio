@@ -21,7 +21,7 @@ class requiredLists(object):
 
     def makeMe(me):
         the = me
-        print "I am " + the
+        return "I am " + the
 
     makeMe("Lynn")
     makeList(tax_dict)
