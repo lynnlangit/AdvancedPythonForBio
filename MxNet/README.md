@@ -1,10 +1,12 @@
-### To verify your version of MxNet
-### run this command from terminal
+# MxNet
 
-### NOTE: samples are from the main MxNet site at 
-### http://mxnet.io/get_started/#start-to-use-mxnet
+To verify your version of MxNet
+run this command from terminal
 
-### run from /Users/lynnlangit/mxnet/python
+NOTE: samples are from the main MxNet site at 
+http://mxnet.io/get_started/#start-to-use-mxnet
+
+run from /Users/lynnlangit/mxnet/python
 
     python 
     >>> import mxnet as mx

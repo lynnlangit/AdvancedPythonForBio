@@ -1,7 +1,7 @@
 # Adv Python for Biologists and More
 
 I am working on the code samples from the book with the same name.  
-I am also working on scaling machine learning - also adding code for TensorFlow.
+I am also working on scaling machine learning - also adding code for TensorFlow and MxNet.
 
 ## Lessons
 
