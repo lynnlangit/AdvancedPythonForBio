@@ -1,6 +1,9 @@
 import numpy as np
 import tensorflow as tf
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 # Model parameters
 W = tf.Variable([.3], tf.float32)
 b = tf.Variable([-.3], tf.float32)

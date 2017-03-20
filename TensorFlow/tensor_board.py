@@ -1,8 +1,32 @@
-# NOT WORKING - fails on line 13
+# NOT WORKING - fails on line 20
 # Docs here - https://www.tensorflow.org/versions/master/how_tos/summaries_and_tensorboard/
+import tensorflow as tf
+import numpy as np
+flags = tf.app.flags
+FLAGS = tf.app.flags.FLAGS
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+def feed_dict(train):
+  if train or FLAGS.fake_data:
+    xs, ys = mnist.train.next_batch(100, fake_data=FLAGS.fake_data)
+    k = FLAGS.dropout
+  else:
+    xs, ys = mnist.test.images, mnist.test.labels
+    k = 1.0
+  return {x: xs, y_: ys, keep_prob: k}
+
+for i in range(FLAGS.max_steps):
+  if i % 10 == 0:  # Record summaries and test-set accuracy
+    summary, acc = sess.run([merged, accuracy], feed_dict=feed_dict(False))
+    test_writer.add_summary(summary, i)
+    print('Accuracy at step %s: %s' % (i, acc))
+  else:  # Record train set summaries, and train
+    summary, _ = sess.run([merged, train_step], feed_dict=feed_dict(True))
+    train_writer.add_summary(summary, i)
 
 def variable_summaries(var):
-  """Attach a lot of summaries to a Tensor (for TensorBoard visualization)."""
   with tf.name_scope('summaries'):
     mean = tf.reduce_mean(var)
     tf.summary.scalar('mean', mean)
@@ -14,15 +38,7 @@ def variable_summaries(var):
     tf.summary.histogram('histogram', var)
 
 def nn_layer(input_tensor, input_dim, output_dim, layer_name, act=tf.nn.relu):
-  """Reusable code for making a simple neural net layer.
-
-  It does a matrix multiply, bias add, and then uses relu to nonlinearize.
-  It also sets up name scoping so that the resultant graph is easy to read,
-  and adds a number of summary ops.
-  """
-  # Adding a name scope ensures logical grouping of the layers in the graph.
   with tf.name_scope(layer_name):
-    # This Variable will hold the state of the weights for the layer
     with tf.name_scope('weights'):
       weights = weight_variable([input_dim, output_dim])
       variable_summaries(weights)
@@ -43,20 +59,9 @@ with tf.name_scope('dropout'):
   tf.summary.scalar('dropout_keep_probability', keep_prob)
   dropped = tf.nn.dropout(hidden1, keep_prob)
 
-# Do not apply softmax activation yet, see below.
 y = nn_layer(dropped, 500, 10, 'layer2', act=tf.identity)
 
 with tf.name_scope('cross_entropy'):
-  # The raw formulation of cross-entropy,
-  #
-  # tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(tf.softmax(y)),
-  #                               reduction_indices=[1]))
-  #
-  # can be numerically unstable.
-  #
-  # So here we use tf.nn.softmax_cross_entropy_with_logits on the
-  # raw outputs of the nn_layer above, and then average across
-  # the batch.
   diff = tf.nn.softmax_cross_entropy_with_logits(targets=y_, logits=y)
   with tf.name_scope('total'):
     cross_entropy = tf.reduce_mean(diff)
@@ -75,7 +80,10 @@ tf.summary.scalar('accuracy', accuracy)
 
 # Merge all the summaries and write them out to /tmp/mnist_logs (by default)
 merged = tf.summary.merge_all()
-train_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/train',
-                                      sess.graph)
+train_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/train',sess.graph)
 test_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/test')
 tf.global_variables_initializer().run()
+
+
+# To Launch tensorboard
+# tensorboard --logdir=path/to/log-directory
