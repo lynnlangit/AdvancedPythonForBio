@@ -1,0 +1,41 @@
+import tax_dict as td
+
+tax_dict = { 
+'Pan troglodytes' : 'Hominoidea',       'Pongo abelii' : 'Hominoidea', 
+'Hominoidea' :  'Simiiformes',          'Simiiformes' : 'Haplorrhini', 
+'Tarsius tarsier' : 'Tarsiiformes',     'Haplorrhini' : 'Primates',
+'Tarsiiformes' : 'Haplorrhini',         'Loris tardigradus' : 'Lorisidae',
+'Lorisidae' : 'Strepsirrhini',          'Strepsirrhini' : 'Primates',
+'Allocebus trichotis' : 'Lemuriformes', 'Lemuriformes' : 'Strepsirrhini',
+'Galago alleni' : 'Lorisiformes',       'Lorisiformes' : 'Strepsirrhini',
+'Galago moholi' : 'Lorisiformes'
+} 
+
+# need to use list from tax_dict.py file - global variable not working
+#td.requiredLists.printList(globals.tax_dict_1)
+
+def get_ancestors_rec(taxon):
+	if taxon == 'Primates':
+		return [taxon]
+	else:
+		parent = tax_dict.get(taxon)
+		parent_ancestors = get_ancestors_rec(parent) 
+		return [parent] + parent_ancestors
+
+def get_lca(taxon1, taxon2): 
+    taxon1_ancestors = [taxon1] + get_ancestors_rec(taxon1) 
+    for taxon in [taxon2] + get_ancestors_rec(taxon2): 
+        if taxon in taxon1_ancestors: 
+            return taxon 
+
+# find the solution -- list must be managed carefully
+def get_lca_list(taxa): 
+    taxon1 = taxa.pop() 
+    while len(taxa) > 0: 
+        taxon2 = taxa.pop() 
+        lca = get_lca(taxon1, taxon2) 
+        print('LCA of ' + taxon1 + ' and ' + taxon2 + ' is ' + lca) 
+        taxon1 = lca 
+    return taxon1 
+
+print(get_lca_list(['Pan troglodytes','Tarsius tarsier', 'Pongo abelii']))

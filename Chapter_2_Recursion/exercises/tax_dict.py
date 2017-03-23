@@ -4,7 +4,8 @@
 
 class requiredLists(object):
 
-    tax_dict = { 
+    global tax_dict_1 
+    tax_dict_1 = { 
     'Pan troglodytes' : 'Hominoidea',       'Pongo abelii' : 'Hominoidea', 
     'Hominoidea' :  'Simiiformes',          'Simiiformes' : 'Haplorrhini', 
     'Tarsius tarsier' : 'Tarsiiformes',     'Haplorrhini' : 'Primates',
@@ -15,13 +16,13 @@ class requiredLists(object):
     'Galago moholi' : 'Lorisiformes'
     } 
 
-    def makeList(tax_dict):
-        myList = tax_dict
+    def makeList(tax_dict_1):
+        myList = tax_dict_1
+        return 'List' + str(myList)
+    
+    def printList(tax_dict_1):
+        myList = tax_dict_1
         print 'List' + str(myList)
 
-    def makeMe(me):
-        the = me
-        return "I am " + the
-
-    makeMe("Lynn")
-    makeList(tax_dict)
+    makeList(tax_dict_1)
+    printList(tax_dict_1)

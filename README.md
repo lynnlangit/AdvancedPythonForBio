@@ -1,7 +1,10 @@
 # Adv Python for Biologists and More
 
-I am working on the code samples from the book with the same name.  
-I am also working on scaling machine learning - also adding code for TensorFlow and MxNet.
+I am working on the Python code samples from the book with the same name.  
+
+I am also working on other coding for bioinformatics topics.  These include the following:
+* Scaling machine learning - I have added sample code for the TensorFlow and MxNet libaries.
+* Using iPython notebooks - I have added a sample which relates to using Python for data science 
 
 ## Lessons
 
