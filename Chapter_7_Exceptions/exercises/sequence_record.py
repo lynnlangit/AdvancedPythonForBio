@@ -26,7 +26,7 @@ class SequenceRecord(object):
         self.species_name = species_name
 
     def get_fasta(self):
-        return('getting fasta sequence')
+        print('getting fasta sequence')
 
 class ProteinRecord(SequenceRecord):
 
@@ -36,17 +36,25 @@ class ProteinRecord(SequenceRecord):
             raise InvalidAminoAcidError("invalid amino acid code in sequence")
 
     def get_hydrophobic(self):
-        return('getting hydrophobic')
+        print('getting hydrophobic')
 
 class DNARecord(SequenceRecord):
 
     def validate_sequence(self, sequence):
         if re.search(r'[^ATGC]', sequence):
             raise InvalidBaseError("invalid base in sequence")
+            print('validate ' + str(sequence))
 
     def complement(self):
-        return('getting complement')
+        print('getting complement')
 
     def get_AT(self):
-        return('getting AT')
+        print('getting AT ' + str(SequenceRecord))  # update to override str()
 
+# testing
+seq = 'ATGCAATGGC'
+gene_name = 'animal'
+species_name = 'Dog or cat'
+myDNA =  DNARecord(seq, gene_name, species_name)
+print(myDNA.get_AT())
+print(myDNA.validate_sequence(seq))

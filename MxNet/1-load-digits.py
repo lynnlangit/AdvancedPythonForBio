@@ -5,6 +5,8 @@ import os
 import urllib
 import gzip
 import struct
+import mxnet as mx
+
 def download_data(url, force_download=True): 
     fname = url.split("/")[-1]
     if force_download or not os.path.exists(fname):
@@ -25,4 +27,11 @@ path='http://yann.lecun.com/exdb/mnist/'
     path+'train-labels-idx1-ubyte.gz', path+'train-images-idx3-ubyte.gz')
 (val_lbl, val_img) = read_data(
     path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
+
+def to4d(img):
+    return img.reshape(img.shape[0], 1, 28, 28).astype(np.float32)/255
+
+batch_size = 100
+train_iter = mx.io.NDArrayIter(to4d(train_img), train_lbl, batch_size, shuffle=True)
+val_iter = mx.io.NDArrayIter(to4d(val_img), val_lbl, batch_size)
 
