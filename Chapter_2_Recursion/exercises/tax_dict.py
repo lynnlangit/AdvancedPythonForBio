@@ -6,6 +6,7 @@ class requiredLists(object):
 
     global tax_dict_1 
     tax_dict_1 = { 
+    'aaa' : 'bbb',       'ccc' : 'ddd',
     'Pan troglodytes' : 'Hominoidea',       'Pongo abelii' : 'Hominoidea', 
     'Hominoidea' :  'Simiiformes',          'Simiiformes' : 'Haplorrhini', 
     'Tarsius tarsier' : 'Tarsiiformes',     'Haplorrhini' : 'Primates',
@@ -20,9 +21,10 @@ class requiredLists(object):
         myList = tax_dict_1
         return 'List' + str(myList)
     
-    def printList(tax_dict_1):
+    def printList(tax_dict_1):      # returns unsorted
         myList = tax_dict_1
         print 'List' + str(myList)
 
     makeList(tax_dict_1)
     printList(tax_dict_1)
+

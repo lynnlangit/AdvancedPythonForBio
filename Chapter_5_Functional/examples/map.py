@@ -3,7 +3,6 @@ from __future__ import division
 dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG'] 
 
 # using procedural code
-
 lengths = [] 
 for dna in dna_list: 
     lengths.append(len(dna)) 
@@ -15,7 +14,6 @@ for dna in dna_list:
 print(at_contents)
 
 # using map
-
 def get_at(dna): 
     return (dna.count('A') + dna.count('T')) / len(dna) 
 

@@ -20,7 +20,5 @@ class DNARecord(object):
         at_content = (a_count + t_count) / length 
         return at_content 
 
-
- 
 d1 = DNARecord('ATATATTATTATATTATA', 'COX1', 'Homo sapiens')
 print(d1.complement())

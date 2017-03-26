@@ -13,20 +13,17 @@ def contains(my_list, target):
 
 def are_closely_related(my_list, taxon1, taxon2, taxon3): 
     result = False 
-    # does the current list match the condition?
     if (contains(my_list, taxon1) and contains(my_list, taxon2) 
     and not contains(my_list, taxon3)): 
         result = True 
-    # do any sublists match the condition?
     for sublist in my_list: 
         if isinstance(sublist, list): 
             if are_closely_related(sublist, taxon1, taxon2, taxon3): 
                 result = True 
     return result
 
-# false case first
+# false case first, then 3 true cases
 print are_closely_related(tree, 'man', 'woman', 'child') == True 
-# true case(s)
 print are_closely_related(tree, 'raccoon', 'dog', 'bear') == False 
 print are_closely_related(tree, 'raccoon', 'bear', 'weasel') == True 
 print are_closely_related(tree, 'raccoon', 'bear', 'dog') == True
