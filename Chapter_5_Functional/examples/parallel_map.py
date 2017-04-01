@@ -3,7 +3,6 @@ import random
 import timeit
 import multiprocessing
 
-# randomly generate a list of 100 DNA sequences of length 10000 bases
 dna = lambda x : ''.join([random.choice(['A', 'T', 'G', 'C']) for i in range(x)])
 dna_list = [dna(10000) for x in range(1000)]
 
@@ -29,7 +28,6 @@ def get_variance(dna):
 
 # create a pool of processes - experiement with different numbers
 pool = multiprocessing.Pool(8)
-
 # time how long it takes to calculate the variances 
 start_time = timeit.default_timer()
 variances = pool.map(get_variance, dna_list)

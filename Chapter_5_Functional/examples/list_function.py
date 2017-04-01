@@ -12,4 +12,6 @@ def get_second(input):
 print_list_with_function(input, get_second)
 
 # using a lambda expression
+print_list_with_function(input, lambda(input) : input[0] )
+print ('new line')
 print_list_with_function(input, lambda(input) : input[1] )
