@@ -2,6 +2,8 @@ def print_list_with_function(my_list, my_function):
     for element in my_list: 
         print(my_function(element)) 
 
+# TODO: Refactor to make this more readable
+
 # using a built-in function
 input = ['abc', 'defhij', 'kl'] 
 print_list_with_function(input, len) 

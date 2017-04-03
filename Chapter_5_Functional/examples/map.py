@@ -7,7 +7,6 @@ lengths = []
 for dna in dna_list: 
     lengths.append(len(dna)) 
 print(lengths)
-
 at_contents = [] 
 for dna in dna_list: 
     at_contents.append((dna.count('A') + dna.count('T')) / len(dna)) 

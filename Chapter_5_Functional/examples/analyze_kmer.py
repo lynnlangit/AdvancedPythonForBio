@@ -12,9 +12,7 @@ def get_at(dna):
 
 dna = 'ATCGATCATCGGCATCGATCGGTATCAGTACGTAC'
 at_scores = get_kmers_f(dna, 8, get_at)
-print('These are the AT scores: ')
-print(at_scores)
+print('These are the AT scores: '+ ''.join(str(at_scores)))
 
 cg_counts = get_kmers_f(dna, 8, lambda dna : dna.count('CG'))
-print('These are the CG counts: ')
-print(cg_counts)
+print('These are the CG counts: '+ ''.join(str(cg_counts)))
