@@ -38,9 +38,9 @@ class DNARecord(SequenceRecord):
         return (a_count + t_count) / length 
 
 p1 = ProteinRecord('MSRSLLLRFLLFLLLLPPLP', 'COX1', 'Homo sapiens') 
-print(p1.get_fasta()) 
-print(p1.get_hydrophobic()) 
+print'Protein record fasta ' + (p1.get_fasta()) 
+print'Protein record hydrophobic ' + str((p1.get_hydrophobic()))
  
 d1 = DNARecord('ATCGCGTACGTGATCGTAG', 'COX1', 'Homo sapiens') 
-print(d1.get_fasta()) 
-print(d1.complement()) 
+print'DNA record fasta ' + (d1.get_fasta()) 
+print'DNA record compliment ' + (d1.complement()) 

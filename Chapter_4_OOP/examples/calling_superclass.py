@@ -31,11 +31,7 @@ class DNARecord(SequenceRecord):
 
     def __init__(self, sequence, gene_name, species_name, genetic_code): 
 
-        # first call the SequenceRecord constructor to check the species name
-        # and set the sequence, gene_name and species_name variables
         SequenceRecord.__init__(self, sequence, gene_name, species_name) 
-
-        # now set the genetic code variable
         self.genetic_code = genetic_code 
  
     def complement(self): 
