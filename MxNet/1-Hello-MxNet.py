@@ -1,7 +1,5 @@
-# Run from terminal
-# CD to '/Users/lynnlangit/mxnet/python'
-# start 'python' from the directory above
-# run the code line by line
+import sys
+sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 
 import mxnet as mx
 a = mx.nd.ones((2, 3))

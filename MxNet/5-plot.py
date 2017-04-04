@@ -1,6 +1,7 @@
+import sys
+sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 import mxnet as mx
 
-# Create a place holder variable for the input data
 data = mx.sym.Variable('data')
 # Flatten the data from 4-D shape (batch_size, num_channel, width, height) 
 # into 2-D (batch_size, num_channel*width*height)
@@ -20,6 +21,7 @@ fc3  = mx.sym.FullyConnected(data=act2, name='fc3', num_hidden=10)
 # The softmax and loss layer
 mlp  = mx.sym.SoftmaxOutput(data=fc3, name='softmax')
 
+batch_size = 10 # added a random value here
 # We visualize the network structure with output size (the batch_size is ignored.)
 shape = {"data" : (batch_size, 1, 28, 28)}
 mx.viz.plot_network(symbol=mlp, shape=shape)

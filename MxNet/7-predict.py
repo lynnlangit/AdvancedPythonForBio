@@ -1,4 +1,3 @@
-# @@@ AUTOTEST_OUTPUT_IGNORED_CELL
 plt.imshow(val_img[0], cmap='Greys_r')
 plt.axis('off')
 plt.show()
@@ -6,7 +5,6 @@ prob = model.predict(val_img[0:1].astype(np.float32)/255)[0]
 assert max(prob) > 0.99, "Low prediction accuracy."
 print 'Classified as %d with probability %f' % (prob.argmax(), max(prob))
 
-# @@@ AUTOTEST_OUTPUT_IGNORED_CELL
 valid_acc = model.score(val_iter)
 print 'Validation accuracy: %f%%' % (valid_acc *100,)
 assert valid_acc > 0.95, "Low validation accuracy."
