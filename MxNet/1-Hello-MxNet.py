@@ -16,9 +16,9 @@ print r                                           # prints the type name
 print(r.asnumpy())                                # print the new array
 
 x = mx.sym.Variable('x')                          # symbolic style
-y = x * 2 + 100  
-z = y=mx.nd.ones((2,3))
+y = x * 2 + 100                                   # define the array manipulation formula     
+z = y=mx.nd.ones((2,3))                           # create a 2-D array initialized with '1's'
 #z = y.eval(x=mx.nd.ones((2,3)))                  # no eval method on NDArray - error?
-print z[0].asnumpy()
+print z[0].asnumpy()                              # print the new array
 
 # read more about the NDArray here - http://mxnet.io/api/python/ndarray.html
