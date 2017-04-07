@@ -1,6 +1,4 @@
 import sys
-# adjust this path to include mxnet as needed
-sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 import mxnet as mx
 
 a = mx.nd.ones((2, 3), mx.cpu())                  # imperative style, 2-D arrays of '1's'

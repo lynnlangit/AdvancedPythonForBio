@@ -6,7 +6,6 @@ import urllib
 import gzip
 import struct
 import sys
-sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 import mxnet as mx
 
 def download_data(url, force_download=True): 

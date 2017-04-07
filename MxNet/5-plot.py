@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 import mxnet as mx
 
 data = mx.sym.Variable('data')
