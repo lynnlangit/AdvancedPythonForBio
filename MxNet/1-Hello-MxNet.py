@@ -1,4 +1,5 @@
 import sys
+# adjust this path to include mxnet as needed
 sys.path.insert(0, "/Users/lynnlangit/mxnet/python")
 import mxnet as mx
 
@@ -14,8 +15,8 @@ print r                                           # prints the type name
 print(r.asnumpy())                                # print the new array
 
 x = mx.sym.Variable('x')                          # symbolic style
-y = x * 2 + 100                                   # define the array manipulation formula 
-z = y.bind(mx.cpu(),{'x': mx.nd.array([1,2])})    # no eval method on NDArray - error? - had to use bind
+y = x ** 2 + 100                                  # define the array manipulation formula 
+z = y.bind(mx.cpu(),{'x': mx.nd.array([8,-10])})  # no eval method on NDArray - error? - had to use bind
 zz = z.forward()                                  # use the forward method with the bind method as an evaluator
 print zz[0].asnumpy()                             # print the new array
 
