@@ -15,7 +15,7 @@ act1 = mx.sym.Activation(data=fc1, name='relu1', act_type="relu")
 fc2  = mx.sym.FullyConnected(data=act1, name='fc2', num_hidden = 64)
 act2 = mx.sym.Activation(data=fc2, name='relu2', act_type="relu")
 
-# The thrid fully-connected layer, note that the hidden size should be 10, which is the number of unique digits
+# The third fully-connected layer, note that the hidden size should be 10, which is the number of unique digits
 fc3  = mx.sym.FullyConnected(data=act2, name='fc3', num_hidden=10)
 # The softmax and loss layer
 mlp  = mx.sym.SoftmaxOutput(data=fc3, name='softmax')
