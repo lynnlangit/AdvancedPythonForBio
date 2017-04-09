@@ -1,4 +1,3 @@
-# need to fix to remove duplicates and for the four case
 def generate_kmers(length):
     result = ['']
     for i in range(length):
@@ -7,7 +6,6 @@ def generate_kmers(length):
             next_result = []
             for four in result:
                 for base in ['A', 'T', 'G', 'C']:
-                    new_result.append(kmer + four)
                     next_result.append(four + base)
         result =  new_result + next_result
     for i in result:
