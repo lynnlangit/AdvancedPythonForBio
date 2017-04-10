@@ -1,12 +1,8 @@
-# From - http://mxnet.io/tutorials/python/mnist.html
-
 import numpy as np
 import os
 import urllib
 import gzip
 import struct
-import sys
-import mxnet as mx
 
 def download_data(url, force_download=True): 
     fname = url.split("/")[-1]
@@ -24,8 +20,23 @@ def read_data(label_url, image_url):
     return (label, image)
 
 path='http://yann.lecun.com/exdb/mnist/'
-(train_lbl, train_img) = read_data(path+'train-labels-idx1-ubyte.gz', path+'train-images-idx3-ubyte.gz')
-(val_lbl, val_img) = read_data(path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
+(train_lbl, train_img) = read_data(
+    path+'train-labels-idx1-ubyte.gz', path+'train-images-idx3-ubyte.gz')
+(val_lbl, val_img) = read_data(
+    path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
+
+#-----
+%matplotlib inline
+import matplotlib.pyplot as plt
+for i in range(10):
+    plt.subplot(1,10,i+1)
+    plt.imshow(train_img[i], cmap='Greys_r')
+    plt.axis('off')
+plt.show()
+print('label: %s' % (train_lbl[0:10],))
+
+#-----
+import mxnet as mx
 
 def to4d(img):
     return img.reshape(img.shape[0], 1, 28, 28).astype(np.float32)/255
@@ -33,5 +44,4 @@ def to4d(img):
 batch_size = 100
 train_iter = mx.io.NDArrayIter(to4d(train_img), train_lbl, batch_size, shuffle=True)
 val_iter = mx.io.NDArrayIter(to4d(val_img), val_lbl, batch_size)
-
 

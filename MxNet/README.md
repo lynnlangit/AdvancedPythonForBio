@@ -16,3 +16,6 @@ run from /Users/lynnlangit/mxnet/python
 expected result is
 [[ 2.  2.  2.]
     [ 2.  2.  2.]]
+
+later examples are from this tutorial:  
+http://mxnet.io/tutorials/python/mnist.html
