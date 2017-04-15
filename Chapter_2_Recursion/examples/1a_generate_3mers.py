@@ -7,6 +7,6 @@ def generate_trimers():
                 result.append(base1 + base2 + base3)
     for i in result:
         answer = i + " "
-        print 'Some', answer
+        print 'Some trimer', answer
 
 generate_trimers()

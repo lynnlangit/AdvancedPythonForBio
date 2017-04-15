@@ -4,7 +4,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 features = [tf.contrib.layers.real_valued_column("x", dimension=1)]
-# Types are linear regression,logistic regression, linear classification, 
+# Types are linear regression,logistic regression, linear classification
 # logistic classification, many neural network classifiers and regressors 
 # Invoke training or fitting & evaluation or inference via the Estimator 
 estimator = tf.contrib.learn.LinearRegressor(feature_columns=features)

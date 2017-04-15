@@ -20,5 +20,5 @@ def get_children(taxon):
         result.append(current_taxon) 
     return result 
 
-print(get_children('Strepsirrhini'))
+print 'Family of Strepsirrhini, including children are' + str((get_children('Strepsirrhini')))
 

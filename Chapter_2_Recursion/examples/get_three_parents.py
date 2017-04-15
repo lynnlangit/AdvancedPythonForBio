@@ -12,4 +12,4 @@ def get_ancestors(taxon):
 	third_parent = tax_dict.get(second_parent)
 	return[first_parent, second_parent, third_parent]
 
-print(get_ancestors('Hominoidea'))
+print 'Ancestors of Hominoidea are' + str((get_ancestors('Hominoidea')))

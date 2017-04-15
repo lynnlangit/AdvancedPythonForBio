@@ -10,7 +10,7 @@ def generate_kmers(length):
         result =  new_result + next_result
     for i in result:
         answer = i + " "
-        print 'Some', answer
+        print 'Some kmer', answer
 
 generate_kmers(1)
 generate_kmers(2)
