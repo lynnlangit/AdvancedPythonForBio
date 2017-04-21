@@ -14,5 +14,5 @@ sequences = ['ACGTACGTGAC', 'ATGCTCANGTA', 'ATGGCGCTAGC', 'ATGCCGCTAGG']
 for seq in sequences: 
     try: 
         print('AT content for ' + seq + ' is ' + str(get_at_content(seq)))
-    except ValueError: 
-        print('skipping invalid sequence of non "ATGC" '+ seq) 
+    except ValueError as e: 
+        print str(e.message)+ ', '+('skipping invalid sequence at '+ seq)
