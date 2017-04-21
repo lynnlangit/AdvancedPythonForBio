@@ -10,9 +10,9 @@ def get_at_content(dna):
     at_content = (a_count + t_count) / length 
     return at_content 
 
-sequences = ['ACGTACGTGAC', 'ACTGCTNAACT', 'ATGGCGCTAGC'] 
+sequences = ['ACGTACGTGAC', 'ATGCTCANGTA', 'ATGGCGCTAGC', 'ATGCCGCTAGG'] 
 for seq in sequences: 
     try: 
         print('AT content for ' + seq + ' is ' + str(get_at_content(seq)))
     except ValueError: 
-        print('skipping invalid sequence '+ seq) 
+        print('skipping invalid sequence of non "ATGC" '+ seq) 
