@@ -24,7 +24,6 @@ path='http://yann.lecun.com/exdb/mnist/'
     path+'train-labels-idx1-ubyte.gz', path+'train-images-idx3-ubyte.gz')
 (val_lbl, val_img) = read_data(
     path+'t10k-labels-idx1-ubyte.gz', path+'t10k-images-idx3-ubyte.gz')
-
 #-----
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -34,7 +33,6 @@ for i in range(10):
     plt.axis('off')
 plt.show()
 print('label: %s' % (train_lbl[0:10],))
-
 #-----
 import mxnet as mx
 

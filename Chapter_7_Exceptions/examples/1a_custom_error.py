@@ -16,5 +16,5 @@ sequences = ['ACGTACGTGAC', 'ACTGCTNAACT', 'ATGGCGCTAGC']
 for seq in sequences: 
     try: 
         print('AT content for ' + seq + ' is ' + str(get_at_content(seq)))
-    except AmbiguousBaseError: 
-        print('skipping invalid sequence '+ seq) 
+    except AmbiguousBaseError as e: 
+        print str(e.message)+ ', '+('skipping invalid sequence '+ seq) 

@@ -12,7 +12,8 @@ def model(features, labels, mode):
   optimizer = tf.train.GradientDescentOptimizer(0.01)
   train = tf.group(optimizer.minimize(loss),tf.assign_add(global_step, 1))
   return tf.contrib.learn.ModelFnOps(
-      mode=mode, predictions=y,
+      mode=mode, 
+      predictions=y,
       loss=loss,
       train_op=train)
 
