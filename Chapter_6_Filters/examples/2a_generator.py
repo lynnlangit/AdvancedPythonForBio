@@ -9,6 +9,6 @@ def generate_4mers(dna):
         yield dna[i:i+4] 
 
 for x in get_4mers('actggcgtgcatg'): 
-    print(x)
+    print'Get 4mers ' + (x)
 for x in generate_4mers('actggcgtgcatg'): 
-    print(x)
+    print'Generate 4mers ' + (x)

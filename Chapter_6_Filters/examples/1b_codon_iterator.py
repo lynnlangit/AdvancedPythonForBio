@@ -17,4 +17,4 @@ class DNASequence():
  
 my_seq = DNASequence("ATGACGCTAT") 
 for codon in my_seq: 
-    print(codon)
+    print'Get next codon ' + (codon)

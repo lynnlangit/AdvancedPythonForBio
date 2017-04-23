@@ -16,8 +16,8 @@ class DNASequence():
       
 my_seq = DNASequence("atgccgcat") 
 for base in my_seq.bases(): 
-    print(base) 
+    print'Base ' + (base) 
 for codon in my_seq.codons(): 
-    print(codon) 
+    print'Codon ' + (codon) 
 for kmer in my_seq.kmers(5): 
-    print(kmer)
+    print'Kmer ' + (kmer)
