@@ -3,19 +3,16 @@ import random
 
 class Individual(object):
 
-    # the constructor takes a list of alleles
     def __init__(self, alleles):
         self.alleles = alleles
 
-    # an individual can calculate its fitness by multiplying the fitnesses of its alleles
-    def get_fitness(self):
+    def get_individual_fitness(self):
         final_fitness = 1
         for a in self.alleles:
             final_fitness = final_fitness * a.fitness
         return final_fitness
 
-    # an individual can figure out its own genotype by concatenating the names of all its alleles
-    def get_genotype(self):
+    def get__individual_genotype(self):
         result = ''
         for a in self.alleles:
             result = result + a.name
@@ -23,38 +20,29 @@ class Individual(object):
 
 class Allele(object):
  
-    # an allele has a name and a genotype
     def __init__(self, name, fitness):
         self.name = name
         self.fitness = fitness
 
 class Locus(object):
 
-    # a locus has a name
-    # the constructor also creates an empty list to hold alleles
     def __init__(self, name):
         self.name = name
         self.alleles = []
 
-    # to add an allele to a locus, we just add it to the list of alleles
     def add_allele(self, allele):
         self.alleles.append(allele)
 
-    # method to return an allele picked at random
     def get_random_allele(self):
         return random.choice(self.alleles)
 
-# function to create an individual given a list of loci
 def create_individual(loci):
     alleles_for_individual = []
-    # pick one allele at random from each locus
     for locus in loci:
         alleles_for_individual.append(locus.get_random_allele())
-    # use the list of alleles to construct a new Individual
     i = Individual(alleles_for_individual)
     return i
 
-# function to create a population of individuals of a given size
 def create_population(size, loci):
     all_individuals = []
     for i in range(size):
@@ -68,7 +56,7 @@ def summarize_population_alleles(population, loci):
 
 def single_generation(population): 
     for individual in list(population): 
-        if random.random() > individual.get_fitness(): 
+        if random.random() > individual.get_individual_fitness(): 
             population.remove(individual)
 
 def get_allele_frequency(population, allele): 
