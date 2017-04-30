@@ -78,7 +78,7 @@ locus3 = Locus('locus three')
 locus3.add_allele(Allele('C', 1)) 
 locus3.add_allele(Allele('c', 0.81))
 
-all_loci = [locus1, locus2, locus3]
+all_loci = [locus1, locus2, locus3] 
 
 my_population = create_population(100, all_loci)
 summarize_population_alleles(my_population, all_loci) 

@@ -105,7 +105,6 @@ summarize_alleles_header( all_loci, alleles_output)
 
 for i in range(100):
     summarize_alleles(my_population, all_loci, alleles_output)
-    single_generation(my_population)
-
+    single_generation(my_population)        # run in terminal and cat 'alleles.csv'
 alleles_output.close()
 

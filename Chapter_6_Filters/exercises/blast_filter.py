@@ -33,4 +33,4 @@ ratios = [
     for l in hit_lines
     if "COX1" in l.split("\t")[1]
 ]
-print'Ratios ' + str((ratios))
+print '\n' + 'Ratios ' + str((ratios))

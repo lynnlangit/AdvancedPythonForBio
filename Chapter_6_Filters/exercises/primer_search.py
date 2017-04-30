@@ -12,6 +12,5 @@ def generate_pairs(length):
         for reverse in generate_primers(length):
             yield(forward, reverse)
 
-
 for f, r in generate_pairs(4):
     print(f,r)

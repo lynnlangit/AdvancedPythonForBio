@@ -16,4 +16,4 @@ similarity_scores = {
     for c1,s1 in gene_sets.items()
 } 
 
-print(similarity_scores)
+print " element:{related one: score,related two: score...}... " + '\n'+ '\n' + str(similarity_scores) 
