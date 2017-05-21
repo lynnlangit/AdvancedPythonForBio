@@ -51,10 +51,11 @@ class DNARecord(SequenceRecord):
     def get_AT(self):
         print('getting AT ' + str(SequenceRecord))  # update to override str()
 
+
 # testing
 seq = 'ATGCAATGGC'
 gene_name = 'animal'
 species_name = 'Dog or cat'
 myDNA =  DNARecord(seq, gene_name, species_name)
-print(myDNA.get_AT())
-print(myDNA.validate_sequence(seq))
+print 'Get AT for DNA ' + str((myDNA.get_AT()))
+print 'Validate sequence ' + str((myDNA.validate_sequence(seq)))

@@ -1,12 +1,12 @@
 try: 
-    # NOTE: run this code in the terminal
+    # Run this code in the terminal
 
-    # ask the user for the filename, open it and read the DNA sequence 
+    # Ask the user for the filename, open it and read the DNA sequence 
     input_file = raw_input('enter filename:\n') 
     f = open(input_file) 
     dna = f.read().rstrip("\n") 
  
-    # ask the user for the number of pieces and calculate the piece length 
+    # Ask the user for the number of pieces and calculate the piece length 
     pieces = int(raw_input('enter number of pieces:\n')) 
     piece_length = len(dna) / pieces 
     print('piece length is ' + str(piece_length)) 

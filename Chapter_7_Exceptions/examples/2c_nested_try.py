@@ -1,5 +1,6 @@
 try: 
-    f = open('my_file.txt') 
+    #f = open('my_file.txt')      # no file
+    f = open('blast_result.txt')  # invalid
     try: 
         my_number = int(f.read()) 
     except ValueError: 
