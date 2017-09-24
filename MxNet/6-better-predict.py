@@ -1,3 +1,5 @@
+import mxnet as mx
+
 data = mx.symbol.Variable('data')
 
 conv1 = mx.sym.Convolution(data=data, kernel=(5,5), num_filter=20)
