@@ -26,7 +26,7 @@ def get_variance(dna):
 	mean_square_diff = sum(square_diffs) / len(square_diffs)
 	return mean_square_diff
 
-pool = multiprocessing.Pool(7)		# test with different numbers for the pool count
+pool = multiprocessing.Pool(7)		# test with different #'s for the pool count
 start_time = timeit.default_timer()
 variances = pool.map(get_variance, dna_list)
 elapsed = timeit.default_timer() - start_time	
