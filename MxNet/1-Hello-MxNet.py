@@ -18,5 +18,4 @@ z = y.bind(mx.cpu(),{'x': mx.nd.array([8,-10])})  # no eval method on NDArray - 
 zz = z.forward()                                  # use the forward method with the bind method as an evaluator
 print zz[0].asnumpy()                             # print the new array
 
-
 # read more about the NDArray here - http://mxnet.io/api/python/ndarray.html
