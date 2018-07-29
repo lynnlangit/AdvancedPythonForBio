@@ -2,8 +2,8 @@ from __future__ import division
 
 dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG'] 
 
-ats = [(dna.count('A') + dna.count('T')) / len(dna) for dna in dna_list]
-print'at comprehension '  + str((ats))
+ats_list = [(dna.count('A') + dna.count('T')) / len(dna) for dna in dna_list]
+print'at comprehension '  + str((ats_list))
 
 def is_at_poor(dna): 
     at = (dna.count('A') + dna.count('T')) / len(dna) 

@@ -13,7 +13,7 @@ class DNASequence():
     def kmers(self, k): 
         for i in range(len(self.sequence) - k +1): 
             yield self.sequence[i:i+k] 
-      
+
 my_seq = DNASequence("atgccgcat") 
 for base in my_seq.bases(): 
     print'Base ' + (base) 

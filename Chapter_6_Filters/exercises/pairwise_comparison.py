@@ -3,7 +3,7 @@ from __future__ import division
 gene_sets = { 
         'arsenic' : {1,2,3,4,5,6,8,12}, 
         'cadmium' : {2,12,6,4}, 
-        'copper' : {7,6,10,4,8}, 
+        'copper'  : {7,6,10,4,8}, 
         'mercury' : {3,2,4,5,1} 
 } 
 
@@ -16,4 +16,5 @@ similarity_scores = {
     for c1,s1 in gene_sets.items()
 } 
 
-print " element:{related one: score,related two: score...}... " + '\n'+ '\n' + str(similarity_scores) 
+print "Results shown in this format: {element1:{related1: score1,related2: score2...}...} "\
+  + '\n'+ '\n' + str(similarity_scores) 
