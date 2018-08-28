@@ -6,10 +6,6 @@ from keras.layers import Dense, Activation
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-import warnings
-warnings.filterwarnings("ignore", message="numpy.dtype size changed")
-warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
-
 x_train = np.random.random((1000, 100))
 y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
 x_test = np.random.random((1000, 100))
@@ -24,15 +20,11 @@ model.add(Activation('relu'))
 model.add(Dense(units=10))
 model.add(Activation('softmax'))
 
-model.compile(loss='categorical_crossentropy',
-              optimizer='sgd',
-              metrics=['accuracy'])
-
+model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 model.fit(x_train, y_train, epochs=5, batch_size=33)
 model.train_on_batch(x_batch, y_batch)
 
 loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
-
 classes = model.predict(x_test, batch_size=128)
 
 # sample from https://keras.io/getting-started/sequential-model-guide/

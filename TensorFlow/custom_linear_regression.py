@@ -18,6 +18,7 @@ def model(features, labels, mode):
       train_op=train)
 
 estimator = tf.contrib.learn.Estimator(model_fn=model)
+#estimator = tf.contrib.learn.EstimatorSpec(model_fn=model)
 x = np.array([1., 2., 3., 4.])
 y = np.array([0., -1., -2., -3.])
 input_fn = tf.contrib.learn.io.numpy_input_fn({"x": x}, y, 4, num_epochs=1000)
