@@ -6,6 +6,10 @@ from keras.layers import Dense, Activation
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+
 x_train = np.random.random((1000, 100))
 y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
 x_test = np.random.random((1000, 100))
