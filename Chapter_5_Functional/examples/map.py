@@ -1,29 +1,27 @@
 from __future__ import division
 
 dna_list = ['TAGC', 'ACGTATGC', 'ATG', 'ACGGCTAG'] 
+lengths = [] 
 
 # using procedural code
-lengths = [] 
 for dna in dna_list: 
     lengths.append(len(dna)) 
-print("Shows lengths - uses 'for': " +str(lengths))
+print("Segment lengths via 'for loop': " +str(lengths))
+
 at_contents = [] 
 for dna in dna_list: 
     at_contents.append((dna.count('A') + dna.count('T')) / len(dna)) 
-print("Shows contents - uses 'for': " + str(at_contents))
+print("AT-rate via 'for loop ': " + str(at_contents) + '\n')
 
 # using map
 def get_at(dna): 
     return (dna.count('A') + dna.count('T')) / len(dna) 
 
 lengths = map(len, dna_list) 
-print("Shows lengths - uses 'map': " +str(lengths))
+print("Segment lengths via 'map function': " +str(lengths))
 
 at_contents = map(get_at, dna_list) 
-print("Shows contents - uses 'map': " + str(at_contents))
+print("AT-rate via 'map function': " + str(at_contents))
 
-at_contents = map( 
-    lambda dna : (dna.count('A') + dna.count('T')) / len(dna), 
-    dna_list 
-)
-print("Shows contents - uses 'map': "+ str(at_contents))
+at_contents = map(lambda dna : (dna.count('A') + dna.count('T')) / len(dna), dna_list )
+print("AT-rate via 'map lambda': "+ str(at_contents))
