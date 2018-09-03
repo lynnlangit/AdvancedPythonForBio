@@ -1,19 +1,16 @@
-def print_list_with_function(my_list, my_function): 
+def print_list_with_my_function(my_list, my_function): 
     for element in my_list: 
-        print(my_function(element)) 
+        print(my_function(element))
 
-# TODO: Refactor to make this more readable
-
-# using a built-in function
 input = ['abc', 'defhij', 'kl'] 
-print_list_with_function(input, len) 
 
-# using a custom function
-def get_second(input): 
+print ('element group count with built-in len function')
+print_list_with_my_function(input, len) 
+
+def get_second_element(input): 
     return input[1] 
-print_list_with_function(input, get_second)
+print ('2nd element using custom function')
+print_list_with_my_function(input, get_second_element)
 
-# using a lambda expression
-print_list_with_function(input, lambda(input) : input[0] )
-print ('new line')
-print_list_with_function(input, lambda(input) : input[1] )
+print ('ALT: 2nd element using lambda expression')
+print_list_with_my_function(input, lambda(input) : input[1] )
