@@ -7,4 +7,4 @@ class DNASequence():
  
 my_seq = DNASequence("ATGACGCTAT") 
 for base in my_seq: 
-    print'Get next base ' + (base)
+    print'Use iterator to get next base ' + (base)
