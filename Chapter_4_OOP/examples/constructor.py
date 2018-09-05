@@ -21,4 +21,4 @@ class DNARecord(object):
         return at_content 
 
 d1 = DNARecord('ATATATTATTATATTATA', 'COX1', 'Homo sapiens')
-print(d1.complement())
+print("Compliment is " + d1.complement())
