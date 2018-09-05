@@ -6,13 +6,6 @@ class DNARecord(object):
          self.gene_name = gene_name
          self.species_name = species_name
  
-    def complement(self): 
-        replacement1 = self.sequence.replace('A', 't') 
-        replacement2 = replacement1.replace('T', 'a') 
-        replacement3 = replacement2.replace('C', 'g') 
-        replacement4 = replacement3.replace('G', 'c') 
-        return replacement4.upper() 
- 
     def get_AT(self): 
         length = len(self.sequence) 
         a_count = self.sequence.count('A') 

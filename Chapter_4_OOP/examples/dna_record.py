@@ -21,5 +21,5 @@ class DNARecord(object):
 
 d = DNARecord()
 print('Created a record for gene ' + d.gene_name + ' from species' + d.species_name)
-print('AT is ' + str(d.get_AT()))
-print('complement is ' + d.complement())
+print('AT content is ' + str(d.get_AT()))
+print('Sequence complement is ' + d.complement())

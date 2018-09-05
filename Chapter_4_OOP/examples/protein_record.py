@@ -23,7 +23,6 @@ class ProteinRecord(object):
         percentage = total * 100 / protein_length 
         return percentage
 
-
 d1 = ProteinRecord('MSRSLLLRFLLFLLLLPPLP', 'COX1', 'Homo sapiens') 
 print(d1.get_fasta()) 
-print(str(d1.get_hydrophobic()))
+print("Percentage of hydrophobic is " + str(d1.get_hydrophobic()))
