@@ -1,20 +1,7 @@
 import tax_dict as td
 
-tax_dict = { 
-    'Pan troglodytes' : 'Hominoidea',
-    'Pongo abelii' : 'Hominoidea', 'Hominoidea' :  'Simiiformes',
-    'Simiiformes' : 'Haplorrhini','Tarsius tarsier' : 'Tarsiiformes','Haplorrhini' : 'Primates',
-    'Tarsiiformes' : 'Haplorrhini','Loris tardigradus' : 'Lorisidae','Lorisidae' : 'Strepsirrhini',
-    'Strepsirrhini' : 'Primates','Allocebus trichotis' : 'Lemuriformes', 'Lemuriformes' : 'Strepsirrhini',
-    'Galago alleni' : 'Lorisiformes','Lorisiformes' : 'Strepsirrhini','Galago moholi' : 'Lorisiformes'
-} 
-
-# this returns lines 3-10 as a list object
-(my_code_1) = tax_dict.get('Pan troglodytes')
-print(my_code_1)
-
-# need to use list from tax_dict.py file - global variable not working
-#td.requiredLists.printList(globals.tax_dict_1)
+# uses list from tax_dict.py (global variable) 
+tax_dict = td.tax_dict_1
 
 def get_ancestors_rec(taxon):
 	if taxon == 'Primates':
