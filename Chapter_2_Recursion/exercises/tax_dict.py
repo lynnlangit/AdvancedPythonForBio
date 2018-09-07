@@ -1,12 +1,7 @@
-# Preparing to refactor - remove all lists from Ch2 and reference 
-# from one external class file
-# test and update all print statements to be return statements
-
 class requiredLists(object):
 
     global tax_dict_1 
     tax_dict_1 = { 
-    'aaa' : 'bbb',       'ccc' : 'ddd',
     'Pan troglodytes' : 'Hominoidea',       'Pongo abelii' : 'Hominoidea', 
     'Hominoidea' :  'Simiiformes',          'Simiiformes' : 'Haplorrhini', 
     'Tarsius tarsier' : 'Tarsiiformes',     'Haplorrhini' : 'Primates',
