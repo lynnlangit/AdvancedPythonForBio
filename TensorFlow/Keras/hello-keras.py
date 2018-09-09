@@ -6,6 +6,12 @@ from keras.layers import Dense, Activation
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
+# must `pip install h5py==2.8.0rc1` to use warnings supression
+import warnings
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore",category=FutureWarning)
+   
+
 x_train = np.random.random((1000, 100))
 y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
 x_test = np.random.random((1000, 100))

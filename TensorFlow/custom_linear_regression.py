@@ -1,7 +1,10 @@
 import numpy as np
 import tensorflow as tf
 import os
+
+# supress warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.logging.set_verbosity(tf.logging.ERROR)
 
 def model(features, labels, mode):
   W = tf.get_variable("W", [1], dtype=tf.float64)
@@ -24,4 +27,5 @@ y = np.array([0., -1., -2., -3.])
 input_fn = tf.contrib.learn.io.numpy_input_fn({"x": x}, y, 4, num_epochs=1000)
 
 estimator.fit(input_fn=input_fn, steps=1000)
+
 print(estimator.evaluate(input_fn=input_fn, steps=10))
