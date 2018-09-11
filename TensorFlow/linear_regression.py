@@ -24,4 +24,4 @@ for i in range(1000):
   sess.run(train, {x:x_train, y:y_train})
 
 curr_W, curr_b, curr_loss  = sess.run([W, b, loss], {x:x_train, y:y_train})
-print("W: %s b: %s loss: %s"%(curr_W, curr_b, curr_loss))
+print("weight: %s bias: %s loss: %s"%(curr_W, curr_b, curr_loss))

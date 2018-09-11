@@ -1,5 +1,4 @@
 # This file is a simple 'Hello Python' type sample for you to use to check your IDE setup
-# I am using VSCode with Python language plug-ins
 
 def adder(x):
     w = x + x

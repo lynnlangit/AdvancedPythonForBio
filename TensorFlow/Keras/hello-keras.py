@@ -11,7 +11,6 @@ import warnings
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore",category=FutureWarning)
    
-
 x_train = np.random.random((1000, 100))
 y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
 x_test = np.random.random((1000, 100))
